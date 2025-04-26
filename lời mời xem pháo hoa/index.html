@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hẹn Đi Xem Pháo Hoa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gradient-to-tr from-yellow-200 via-pink-100 to-orange-100 min-h-screen flex items-center justify-center p-4 font-quicksand">
+  <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 w-full max-w-lg animate-fade-in">
+    <h1 class="text-4xl font-pacifico text-orange-500 mb-4 text-center animate-slide-up">Đi xem pháo hoa cùng tớ nhé?</h1>
+    <p class="text-center mb-6 text-gray-700 text-lg">
+      <strong>Ngày:</strong> 27/4<br>
+      <strong>Địa điểm:</strong> Công viên Thống Nhất
+    </p>
+
+    <div id="question1" class="space-y-6">
+      <p class="text-lg font-semibold text-center">Cậu có muốn đi không?</p>
+      <div class="flex justify-center gap-6">
+        <button class="btn" onclick="agree()">✨ Đồng ý</button>
+        <button class="btn" onclick="decline()">❌ Không đồng ý</button>
+      </div>
+    </div>
+
+    <div id="question2" class="space-y-6 hidden">
+      <p class="text-lg font-semibold text-center">Mình ăn tối thế nào nè?</p>
+      <div class="flex justify-center gap-6">
+        <button class="btn" onclick="dinnerOutside()">🍴 Đi ăn tối</button>
+        <button class="btn" onclick="dinnerHome()">🏡 Ăn tại nhà</button>
+      </div>
+    </div>
+
+    <div id="dinnerOptions" class="space-y-6 hidden">
+      <p class="text-lg font-semibold text-center">Chọn món yêu thích nhé:</p>
+      <div class="flex flex-col gap-4 items-center">
+        <button class="btn" onclick="choose('Pizza')">🍕 Pizza</button>
+        <button class="btn" onclick="choose('Bún chả')">🍜 Bún chả</button>
+        <button class="btn" onclick="choose('Cơm tấm')">🍚 Cơm tấm</button>
+        <button class="btn" onclick="choose('Nem nướng')">🍢 Nem nướng</button>
+        <button class="btn" onclick="choose('Gà (Chicken)')">🍗 Gà (Chicken)</button>
+      </div>
+    </div>
+
+    <div id="question3" class="space-y-6 hidden">
+      <p class="text-lg font-semibold text-center">
+        Quốc Tử Giám đang có tour cực hay, đi luôn không?<br>
+        <a href="https://vt.tiktok.com/ZSrTNB2fo/" target="_blank" class="text-blue-600 underline">Xem tour ở đây</a>
+      </p>
+      <div class="flex justify-center gap-6">
+        <button class="btn" onclick="tourYes()">✅ Đi tour</button>
+<button class="btn" onclick="tourNo()">❌ Không đi</button>
+      </div>
+    </div>
+
+    <div id="result" class="hidden text-center mt-8 text-lg font-semibold text-green-600">
+      Lựa chọn đã được ghi nhận! Cám ơn cậu nhé!
+    </div>
+
+    <div id="sadCat" class="hidden flex flex-col items-center mt-6">
+      <img src="https://i.pinimg.com/originals/fd/84/94/fd8494d07bbcb1e35b1f7d357d532b84.jpg" alt="Mèo buồn" class="rounded-xl w-64 mb-4 animate-fade-in">
+      <p class="text-gray-700 text-lg">Không sao cả, mình hẹn nhau lần sau nhé! Mong một lần gặp thiệt vui!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
